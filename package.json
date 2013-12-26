@@ -5,7 +5,8 @@
   "main": "assert-in-order.js",
   "dependencies": {},
   "devDependencies": {
-    "markdown-code-blocks": "0.0.1"
+    "markdown-code-blocks": "0.0.1",
+    "tape": "~2.3.2"
   },
   "scripts": {
     "test": "markdown-code-blocks -t javascript < README.md | node"

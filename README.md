@@ -14,8 +14,10 @@ var assertions = [
 ]
 ```
 
-The each assertion should be an array whose first item is a method name. Any
-additional item are appended to the argument list when the assertion is called.
+Each assertion should be an array whose first item is a method name. Any
+additional items are appended to the argument list when the assertion is
+called. For example, `group[0](true)` is equivalent to
+`assert.ok(true, 'first assertion')` with an additional ordering check.
 
 ```javascript
 var group1 = inOrder(assert, assertions)
@@ -45,6 +47,21 @@ assert.equal(group3.length, 2)
 
 group3.first(true)
 group3.second(true)
+```
+
+The ordering checks do not change the number of assertions that will be run so
+you can use this with [tap][] or [tape][] and test plans:
+
+```javascript
+require('tape')('Assertion ordering', function (t) {
+  var group = inOrder(t, {
+    first: ['pass', 'radical'],
+    second: ['pass', 'tubular']
+  })
+  t.plan(group.length)
+  group.first()
+  group.second()
+})
 ```
 
 ## License
