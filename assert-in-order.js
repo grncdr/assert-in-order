@@ -1,11 +1,12 @@
 module.exports = function assertInOrder (assert, assertions) {
   var ordering = []
   var idx = 0
-  var group = {}
+  var group = {length: 0}
   for (var key in assertions) {
     if (!assertions.hasOwnProperty(key)) continue
     ordering.push(key)
     group[key] = wrap(key)
+    ++ group.length
   }
   return group
 

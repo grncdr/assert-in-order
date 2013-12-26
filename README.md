@@ -20,6 +20,8 @@ additional item are appended to the argument list when the assertion is called.
 ```javascript
 var group1 = inOrder(assert, assertions)
 
+assert.equal(group1.length, 2)
+
 // These pass
 group1[0](true)
 group1[1](1, 1)
@@ -38,6 +40,8 @@ group3 = inOrder(assert, {
   first: ['ok', 'first assertion'],
   second: ['ok', 'second assertion']
 })
+
+assert.equal(group3.length, 2)
 
 group3.first(true)
 group3.second(true)
