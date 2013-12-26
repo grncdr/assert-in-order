@@ -1,0 +1,26 @@
+{
+  "name": "assert-in-order",
+  "version": "0.0.0",
+  "description": "assert a group of assertions are performed in order",
+  "main": "assert-in-order.js",
+  "dependencies": {},
+  "devDependencies": {
+    "markdown-code-blocks": "0.0.1"
+  },
+  "scripts": {
+    "test": "markdown-code-blocks -t javascript < README.md | node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/assert-in-order.git"
+  },
+  "homepage": "https://github.com/substack/assert-in-order",
+  "keywords": [
+    "assert",
+    "test",
+    "group",
+    "order"
+  ],
+  "author": "Stephen Sugden <me@stephensugden.com>",
+  "license": "MIT"
+}
